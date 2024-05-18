@@ -3,7 +3,7 @@ import User from "../models/user.js";
 import { errorHandler } from "../utils/error.js";
 
 // Get Profile
-export const getProfile = async (req, res, next) => {
+export const getUserProfile = async (req, res, next) => {
   // Get profile logic
   if (req.user.id === req.params.id) {
     try {
@@ -18,7 +18,7 @@ export const getProfile = async (req, res, next) => {
 };
 
 // Update Profile
-export const updateProfile = async (req, res, next) => {
+export const updateUserProfile = async (req, res, next) => {
   // Update profile logic
   if (req.user.id !== req.params.id) {
     return next(errorHandler(401, "You can only update your own profile"));
