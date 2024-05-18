@@ -1,6 +1,6 @@
-import User from "../models/user.js";
 import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken";
+import User from "../models/user.js";
 import { errorHandler } from "../utils/error.js";
 
 // Signup
@@ -24,7 +24,7 @@ export const signup = async (req, res, next) => {
     email,
     password: hashedPassword,
   });
-  
+
   try {
     const savedUser = await newUser.save();
     const { password: pass, ...rest } = savedUser._doc;

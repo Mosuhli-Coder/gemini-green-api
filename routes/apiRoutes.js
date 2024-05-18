@@ -13,8 +13,8 @@ router.post('/login', login);
 router.post('/logout', logout);
 
 // Profile Management
-router.get('/profile', authMiddleware, getProfile);
-router.post('/profile/update', authMiddleware, updateProfile);
+router.get('/profile/:id', authMiddleware, getProfile);
+router.post('/profile/update/:id', authMiddleware, updateProfile);
 
 // Carbon Footprint Calculation
 router.post('/carbon-footprint', authMiddleware, calculateCarbonFootprint);
